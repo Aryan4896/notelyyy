@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notely</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #8793ab;
+      }
+      .login-container {
+        max-width: 400px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-input {
+        background-color: #edf2f7;
+        border-color: #cbd5e0;
+      }
+      .form-input:focus {
+        border-color: #4a90e2;
+      }
+      .submit-button {
+        background-color: #4a90e2;
+        border-color: #4a90e2;
+      }
+      .submit-button:hover {
+        background-color: #2a69c8;
+      }
+      .title {
+        color: #333333;
+      }
+      .Register {
+        color: #2a69c8;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2 class="text-3xl text-center title mb-5">Notely</h2>
+      <img src="/assets/techny.gif" alt="" class="mx-auto mb-5 w-72 h-72" />
+      <!-- Center image -->
+      <h3 class="text-3xl text-center title mb-5">Login to Your Account</h3>
+      <form action="/login" method="post" class="text-center">
+        <input
+          class="px-3 py-2 mb-3 w-full outline-none bg-transparent border-2 rounded-md form-input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          id="email"
+        />
+        <input
+          class="px-3 py-2 mb-3 w-full outline-none bg-transparent border-2 rounded-md form-input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          id="password"
+        />
+        <input
+          class="py-2 px-4 text-white rounded-md border-2 outline-none cursor-pointer hover:bg-blue-600 submit-button"
+          type="submit"
+          value="Login"
+        />
+        <div class="">
+          <p>
+            Create your account
+            <a href="/register" class="Register">Register</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

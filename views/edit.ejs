@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Post</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #4a5568;
+      }
+      .edit-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #2d3748;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .edit-container textarea {
+        width: 100%;
+        min-height: 150px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #4a5568;
+        border: 2px solid #718096;
+        border-radius: 8px;
+        color: #ffffff;
+        resize: none;
+      }
+      .edit-container input[type="submit"] {
+        width: 200px;
+        padding: 10px;
+        background-color: #f6e05e;
+        border: 2px solid #f6e05e;
+        border-radius: 8px;
+        color: #000000; /* Black text color */
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+      }
+      .edit-container input[type="submit"]:hover {
+        background-color: #ffd700;
+        border-color: #ffd700;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="edit-container">
+      <div class="w-full flex justify-end mb-5">
+        <a
+          class="bg-red-500 rounded-md px-3 py-2 text-sm inline-block"
+          href="/logout"
+          >Logout</a
+        >
+      </div>
+      <h3 class="text-3xl text-center text-white mb-5">Edit Post</h3>
+      <form action="/update/<%= post._id %>" method="post">
+        <h5 class="text-md text-white mb-2">Edit your post</h5>
+        <textarea name="content" placeholder="Edit your Blog">
+<%=post.content%></textarea
+        >
+        <input type="submit" value="Edit your blog" />
+      </form>
+    </div>
+  </body>
+</html>
