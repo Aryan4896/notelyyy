@@ -1,6 +1,5 @@
 require("dotenv").config();
 const path = require("path");
-const fs = require("fs");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
@@ -14,6 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -38,11 +38,11 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/register", (req, res) => {
-  res.render("index");
+  res.render("register");
 });
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("register");
 });
 
 app.post("/register", async (req, res) => {
